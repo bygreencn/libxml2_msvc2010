@@ -1,0 +1,68 @@
+Installation on Woe32 (WinNT/2000/XP/Vista/7, Win95/98/ME):
+
+There are two ways to install on windows one via "With Mingw/Cygwin"
+and the other "With Visual Studio 2010". See below for
+for description.
+
+"With Mingw/Cygwin"
+-------------------
+
+Building requires the mingw or cygwin development environment (includes gcc).
+MS Visual C/C++ with "nmake" is no longer supported.
+
+This file explains how to create binaries for the mingw execution environment.
+For how to create binaries for the cygwin environment, please see the normal
+INSTALL file.  MS Visual C/C++ with "nmake" is no longer supported.
+
+I recommend to use the cygwin environment as the development environment
+and mingw only as the target (runtime, deployment) environment.
+For this, you need to install
+  - cygwin,
+  - the mingw runtime package, also from the cygwin site.
+
+You must not install cygwin programs directly under /usr/local -
+because the mingw compiler and linker would pick up the include files
+and libraries from there, thus introducing an undesired dependency to
+cygwin. You can for example achieve this by using the
+configure option --prefix=/usr/local/cygwin each time you build a
+program for cygwin.
+
+Building for mingw is then achieved through the following preparation
+and configure commands:
+
+   PATH=/usr/local/mingw/bin:$PATH
+   export PATH
+   ./configure --host=i586-pc-mingw32 --prefix=/usr/local/mingw \
+     CC="gcc-3 -mno-cygwin" \
+     CXX="g++-3 -mno-cygwin" \
+     CPPFLAGS="-Wall -I/usr/local/mingw/include" \
+     LDFLAGS="-L/usr/local/mingw/lib"
+
+The -mno-cygwin tells the cygwin compiler and linker to build for mingw.
+The -I and -L option are so that packages previously built for the
+same environment are found. The --host option tells the various
+tools that you are building for mingw, not cygwin.
+
+"With Visual Studio 2010"
+-------------------------
+visual studio 2010 solution and project file are present in directory
+$(installation_dir)/windows/VC10 . You shoud be be able to include
+the project file into your solution and be happy with them.
+
+Note 1: You might need to change some directory settings
+(output directories) since in the current setup one library/dll
+overwrites the other library/dll.
+
+Note 2: Care has been taken to use most project settings as defaults.
+So there is still room for improvement
+
+Note 3: The "configure" step is not required for vc10, instead
+a preconfigured "config.h" and "iconv.h" file is copied (as 
+pre build step) to their respective location from the
+VC10 subdirectory.
+
+Note 4: compilation for static and dynamic libraries (debug 
+and release) is present in the project settings. Note that 
+I'm a bit shaky as for the working of the DLL compiles. You
+might need to change something here.
+

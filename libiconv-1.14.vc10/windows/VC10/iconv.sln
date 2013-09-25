@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "iconv", "iconv.vcxproj", "{BEC03130-A64C-48F8-863C-52DA83CFB3AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug DLL|Win32 = Debug DLL|Win32
+		Debug|Win32 = Debug|Win32
+		Release DLL|Win32 = Release DLL|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEC03130-A64C-48F8-863C-52DA83CFB3AE}.Debug DLL|Win32.ActiveCfg = Debug DLL|Win32
+		{BEC03130-A64C-48F8-863C-52DA83CFB3AE}.Debug DLL|Win32.Build.0 = Debug DLL|Win32
+		{BEC03130-A64C-48F8-863C-52DA83CFB3AE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BEC03130-A64C-48F8-863C-52DA83CFB3AE}.Debug|Win32.Build.0 = Debug|Win32
+		{BEC03130-A64C-48F8-863C-52DA83CFB3AE}.Release DLL|Win32.ActiveCfg = Release DLL|Win32
+		{BEC03130-A64C-48F8-863C-52DA83CFB3AE}.Release DLL|Win32.Build.0 = Release DLL|Win32
+		{BEC03130-A64C-48F8-863C-52DA83CFB3AE}.Release|Win32.ActiveCfg = Release|Win32
+		{BEC03130-A64C-48F8-863C-52DA83CFB3AE}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
